@@ -1,0 +1,71 @@
+
+change item to post to (arenas) where different users can chat based on sports interest
+
+
+07:08 episode 3
+
+
+episode 6
+
+{ id: uuid(), name: "Football" },
+    { id: uuid(), name: "Basketball" },
+    { id: uuid(), name: "Ice Hockey" },
+    { id: uuid(), name: "Motorsport" },
+    { id: uuid(), name: "Bandy" },
+    { id: uuid(), name: "Rugby" },
+    { id: uuid(), name: "Skiing" },
+    { id: uuid(), name: "Shooting" },
+
+
+
+to deploy to heroku
+
+heroku login
+heroku create
+ 
+to deploy to github
+git add .
+git commit -am 'Version 1.0.0'
+git push heroku master
+
+
+google how to protect backend routes
+
+
+echo "# gamechums" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/lightaqn/gamechums.git
+git push -u origin master
+
+
+mern front to back
+mern shopping list
+
+npm remove bodyparser, uuid, webvitals
+
+verify routes with postman
+
+npm install bcryptjs jsonwebtoken config (backend)
+
+react-router-dom( to handle link to landing page{ login to make posts })
+frontend ( npm install styled-components)
+
+edit register modal to include phone number & sporting interest like (basketball, football, ice hockey, motorsport, bandy, rugby, skiing, shooting etc)
+
+forget password feature
+
+login with either email or password
+
+verify registration with verification link to email & 5 digit code to phone number using (free mobile provider like cloudotp or twilio)
+
+
+
+
+
+
+
+
+jwt token is divided into header(token type).payload(data).verifysignature(e.g Hmacsha256)

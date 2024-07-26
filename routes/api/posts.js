@@ -1,14 +1,15 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // Post Model
-const Post = require("../../models/Post");
+const Post = require('../../models/Post');
 
 // @route GET api/posts
 // @desc GET All posts
 //@access public
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   Post.find()
     .sort({ date: -1 })
     .then((posts) => res.json(posts));
@@ -16,9 +17,9 @@ router.get("/", (req, res) => {
 
 // @route POST api/posts
 // @desc Create A Post
-//@access public
+//@access private
 
-router.post("/", (req, res) => {
+router.post('/', auth, (req, res) => {
   const newPost = new Post({
     name: req.body.name,
   });
@@ -28,9 +29,9 @@ router.post("/", (req, res) => {
 
 // @route DELETE api/posts/:id
 // @desc Create A Post
-//@access public
+//@access private
 
-router.delete("/:id", (req, res) => {
+router.delete('/:id', auth, (req, res) => {
   Post.findById(req.params.id)
     .then((post) => post.remove().then(() => res.json({ success: true })))
     .catch((err) => res.status(404).json({ success: false }));
